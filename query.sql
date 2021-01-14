@@ -44,3 +44,9 @@ on Pokemon.Id = UserPokemon.PokemonId
 group by User.Name, Pokemon.Name;
 
 -- Ispisi duple pokemone po korisniku
+select Pokemon.Name, count(*)
+from UserPokemon
+inner join Pokemon
+on Pokemon.Id = UserPokemon.PokemonId
+group by Pokemon.Id
+having count(*) = 2;
